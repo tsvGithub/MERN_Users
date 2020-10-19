@@ -7,8 +7,6 @@ require("dotenv").config();
 // console.log(process.env.ATLAS_URI);
 const User = require("./models/user");
 
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json({ extended: false }));
 app.use(cors());
 //parse json as server sends&recieves json
 app.use(express.json());
@@ -32,43 +30,40 @@ const connectDB = async () => {
 //connect DB
 connectDB();
 //--------------
-//Test:
+//====================
+//ROUTES:
+//Test route:
 // app.get("/", (req, res) => {
 //   res.send("Inside backend");
 // });
-//-------------------
-// //Explanation
-// //receive some data on DB
-// //on BE to URL 'api/register' from FE
-// app.post("/api/register", (req, res) => {
-//   //req is what is received from FE to BE
-//   console.log(req.body); //client>Form>const dataFromForm
-//   //res is what is send from BE to FE
-//   res.json({
-//     message: "Date received", //client>Form>const response
-//   });
-// });
 //------------------------
 //from FE to BE
+//receive some data on DB BE
+//to URL 'api/register' from FE
 app.post("/api/register", async (req, res) => {
   try {
-    //User Schema for create on DB
+    //User Schema for create user on DB
     //key ('name', 'email') is from User Schema
     //value (req.body.userName,) comes from FE Form.js
+    //req is what is received from FE to BE
     await User.create({
       name: req.body.userName,
       email: req.body.userEmail,
     });
+    //req is what is received from FE to BE
+    console.log(req.body); //client>Form>const dataFromForm
+    //-----------------------------
     //after send response on FE
     //!!always need send response otherwise APP
     //will loading intil crashes!!
+    //res is what is send from BE to FE
     res.json({
-      message: "User Submited",
+      message: "User Submited", //client>Form>const response
     });
   } catch (error) {
     //in model email is unique:
     res.json({
-      message: "That Email is already registered",
+      message: "That Email is already registered", //client>Form>const response
     });
   }
 });

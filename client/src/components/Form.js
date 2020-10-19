@@ -9,13 +9,16 @@ const Form = () => {
     userEmail: "",
     message: "",
   });
+  //--------------------------
+  // Form inputs
   const handleChange = (e) => {
     setUserDetails({
       ...userDetails,
       [e.target.name]: e.target.value,
     });
   };
-  //----------------------------------
+  //-----------------------------
+  //Form Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     //stringify 'dataFromForm' to send from FE to BE
@@ -48,7 +51,7 @@ const Form = () => {
         <input type="text" required id="userName" name="userName" onChange={handleChange} />
         <label htmlFor="">Email:</label>
         <input type="email" required id="userEmail" name="userEmail" onChange={handleChange} />
-        <button type="submit">Register</button>
+        <button type="submit">Submit</button>
         {userDetails.message ? <h1 className="resultMessage">{userDetails.message}</h1> : null}
       </form>
     </div>
