@@ -1,0 +1,7 @@
+.users {
+  list-style: none;
+}
+.users li {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
