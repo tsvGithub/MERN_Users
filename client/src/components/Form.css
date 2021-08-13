@@ -5,8 +5,8 @@ form {
   flex-direction: column;
   padding: 25px 50px;
   text-align: left;
-  min-width: 500px;
-  border: 1px solid black;
+  min-width: 300px;
+  /* border: 1px solid black; */
 }
 form input {
   margin-bottom: 15px;

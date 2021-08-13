@@ -5,7 +5,7 @@ import "./Nav.css";
 const Nav = () => {
   return (
     <nav>
-      <h2>Todo App</h2>
+      <h2>Users List</h2>
       <ul>
         <li>
           <Link to="/">Home</Link>
