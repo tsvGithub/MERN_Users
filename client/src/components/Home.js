@@ -25,7 +25,7 @@ const Home = () => {
     users.map((user, index) => {
       return (
         <li key={index}>
-          Name: {user.name} || Email: {user.email}{" "}
+          Name: <span>{user.name}</span> Email: <span>{user.email}</span>
         </li>
       );
     });

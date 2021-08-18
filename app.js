@@ -31,37 +31,28 @@ const connectDB = async () => {
 connectDB();
 //--------------
 //====================
-//ROUTES:
-//Test route:
-// app.get("/", (req, res) => {
-//   res.send("Inside backend");
-// });
+//I ROUTES:
 //------------------------
-//from FE to BE
-//receive some data on DB BE
-//to URL 'api/register' from FE
 app.post("/api/register", async (req, res) => {
   try {
-    //User Schema for create user on DB
+    //User Schema for DB
     //key ('name', 'email') is from User Schema
     //value (req.body.userName,) comes from FE Form.js
-    //req is what is received from FE to BE
     await User.create({
       name: req.body.userName,
       email: req.body.userEmail,
     });
-    //req is what is received from FE to BE
+    //req==='request' is what is received from FE to BE
     console.log(req.body); //client>Form>const dataFromForm
     //-----------------------------
-    //after send response on FE
-    //!!always need send response otherwise APP
+    //!!always send 'response' on FE otherwise APP
     //will loading intil crashes!!
     //res is what is send from BE to FE
     res.json({
       message: "User Submited", //client>Form>const response
     });
   } catch (error) {
-    //in model email is unique:
+    //in Model 'email' is unique:
     res.json({
       message: "That Email is already registered", //client>Form>const response
     });
@@ -86,7 +77,7 @@ app.get("/api/users", async (req, res) => {
 });
 
 //========================
-//=======================
+//======================
 const Port = 5000;
 app.listen(Port, () => {
   console.log(`Server runs on port ${Port}`);

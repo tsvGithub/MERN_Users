@@ -1,33 +1,36 @@
 {
-  "name": "mern_todo_telmo",
+  "name": "mern_users",
   "version": "1.0.0",
-  "description": "mern simple",
+  "description": "mern basics",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app",
-    "client": "cd client && npm run start",
-    "server": "nodemon app --ignore client/",
+    "start": "node app.js",
+    "//// client": "cd client && npm run start",
+    "client": "npm start --prefix client",
+    "////server": "nodemon app --ignore client/",
+    "server": "nodemon app.js",
     "client-install": "cd client && npm install",
     "server-install": "npm install",
     "install-all": "concurrently \"npm run client-install\" \"npm run server-install\"",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "////dev": "concurrently \"npm run client\" \"npm run server\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsvGithub/MERN_Todo_Telmo.git"
+    "url": "git+https://github.com/tsvGithub/MERN_Users.git"
   },
   "keywords": [
     "mern",
-    "simple"
+    "beginners"
   ],
   "author": "tsv",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tsvGithub/MERN_Todo_Telmo/issues"
+    "url": "https://github.com/tsvGithub/MERN_Users/issues"
   },
-  "homepage": "https://github.com/tsvGithub/MERN_Todo_Telmo#readme",
+  "homepage": "https://github.com/tsvGithub/MERN_Users#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

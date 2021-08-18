@@ -1,9 +1,11 @@
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: #002333;
+  /* background-color: #002333;
+  background-color: #28b487; */
   padding: 10px 50px;
   color: #fff;
+  color: #333c;
 }
 nav ul {
   list-style: none;
@@ -16,5 +18,5 @@ nav a {
   padding: 5px 10px;
   font-size: 20px;
   font-weight: bold;
-  color: #fff;
+  color: #333c;
 }
